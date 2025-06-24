@@ -1,78 +1,154 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jasleen Kaur's CS499 Final Project ePortfolio</title>
-  <style>
-    body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
-    h1, h2 { color: #2c3e50; }
-    a { color: #2980b9; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .section { margin-bottom: 40px; }
-    ul { list-style-type: none; padding-left: 0; }
-    li { margin: 6px 0; }
-    iframe { max-width: 100%; height: 360px; }
-  </style>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Jasleen Kaur's CS499 Final Project ePortfolio</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #e6f0ff;
+    color: #003366;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #3366cc;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
+  nav {
+    display: flex;
+    background-color: #4d79ff;
+    justify-content: center;
+  }
+  nav a {
+    color: white;
+    padding: 14px 25px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  nav a:hover, nav a.active {
+    background-color: #003366;
+  }
+  section {
+    padding: 20px 40px;
+    display: none;
+  }
+  section.active {
+    display: block;
+  }
+  h1, h2 {
+    margin-top: 0;
+  }
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+  ul li {
+    margin-bottom: 8px;
+  }
+  a {
+    color: #003366;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .video-container {
+    margin-top: 15px;
+  }
+</style>
+<script>
+  function showSection(sectionId, element) {
+    // Hide all sections
+    const sections = document.querySelectorAll('section');
+    sections.forEach(sec => sec.classList.remove('active'));
+    
+    // Remove active class from all nav links
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => link.classList.remove('active'));
+    
+    // Show selected section
+    document.getElementById(sectionId).classList.add('active');
+    
+    // Add active class to clicked nav link
+    element.classList.add('active');
+  }
+
+  // On page load, show About tab by default
+  window.onload = () => {
+    document.querySelector('nav a').click();
+  };
+</script>
 </head>
 <body>
-
+<header>
   <h1>Jasleen Kaur's CS499 Final Project ePortfolio</h1>
+</header>
+<nav>
+  <a onclick="showSection('about', this)" class="active">About</a>
+  <a onclick="showSection('artifacts', this)">Artifacts</a>
+  <a onclick="showSection('narratives', this)">Narratives</a>
+  <a onclick="showSection('video', this)">Code Review Video</a>
+  <a onclick="showSection('selfAssessment', this)">Self-Assessment</a>
+</nav>
 
-  <div class="section">
-    <h2>Professional Self-Assessment</h2>
-    <p>
-      Completing the Computer Science program at SNHU has helped me grow as a developer and better understand the software development lifecycle. Through this capstone, I created a professional ePortfolio that highlights my progress and skills, especially in full stack development.
-    </p>
-    <p>
-      I chose to enhance a Contact Management System I previously built in CS320 Software Design and Engineering, replacing the original Java-based system with a full-stack React and Node.js application. I focused on creating a clean interface and reusable components. For algorithms and data structures, I added dynamic filtering and sorting, allowing users to search and organize contacts efficiently. For databases, I implemented a MongoDB backend with full CRUD functionality, input validation, and real-time updates.
-    </p>
-    <p>
-      These enhancements demonstrate my ability to write efficient, secure code and manage a complete full-stack project. This capstone has strengthened my problem-solving, communication, and technical skills and prepared me confidently for software development roles.
-    </p>
+<section id="about" class="active">
+  <h2>Professional Self-Assessment</h2>
+  <p>
+    Completing the Computer Science program at SNHU has helped me grow as a developer and better understand the software development lifecycle.
+    Through this capstone, I created a professional ePortfolio that highlights my progress and skills, especially in full stack development.
+  </p>
+  <p>
+    I chose to enhance a Contact Management System I previously built in CS320 Software Design and Engineering,
+    replacing the original Java-based system with a full-stack React and Node.js application.
+    I focused on creating a clean interface and reusable components.
+    For algorithms and data structures, I added dynamic filtering and sorting, allowing users to search and organize contacts efficiently.
+    For databases, I implemented a MongoDB backend with full CRUD functionality, input validation, and real-time updates.
+  </p>
+  <p>
+    These enhancements demonstrate my ability to write efficient, secure code and manage a complete full-stack project.
+    This capstone has strengthened my problem-solving, communication, and technical skills and prepared me confidently for software development roles.
+  </p>
+</section>
+
+<section id="artifacts">
+  <h2>Artifacts</h2>
+  <p><strong>Original Artifact:</strong> The original Contact Management System built in Java during CS320.</p>
+  <ul>
+    <li><a href="Artifacts/Project-1-2-main.zip" target="_blank">Download Original Artifact (Project-1-2-main.zip)</a></li>
+    <li><a href="Artifacts/App.js" target="_blank">Enhanced React Frontend Code (App.js)</a></li>
+    <li><a href="Artifacts/server.js" target="_blank">Enhanced Backend Code (server.js)</a></li>
+  </ul>
+</section>
+
+<section id="narratives">
+  <h2>Narratives</h2>
+  <ul>
+    <li><a href="Narratives/CS499_Database_Enhancement.docx" target="_blank">CS499 Database Enhancement</a></li>
+    <li><a href="Narratives/CS499_Enhancement_One_2_.docx" target="_blank">Enhancement One</a></li>
+    <li><a href="Narratives/Milestone_Three_Narrative_Algorithms_and_Data_Structure_.docx" target="_blank">Milestone Three Narrative</a></li>
+    <li><a href="Narratives/Self_Assessment_CS499.docx" target="_blank">Professional Self-Assessment</a></li>
+  </ul>
+</section>
+
+<section id="video">
+  <h2>Code Review Video</h2>
+  <p>You can watch my code review video below or <a href="Code_Review_Video/code_review.mp4" target="_blank">download the video here</a>.</p>
+  <div class="video-container">
+    <video width="640" height="360" controls>
+      <source src="Code_Review_Video/code_review.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
   </div>
+</section>
 
-  <div class="section">
-    <h2>Artifacts</h2>
-    <p><strong>Original Artifact:</strong> The original Contact Management System built in Java during CS320.</p>
-    <ul>
-      <li><a href="Artifacts/Original/Project-1-2-main.zip" target="_blank">Download Original Artifact (Project-1-2-main.zip)</a></li>
-    </ul>
-
-    <p><strong>Enhanced React Frontend:</strong> Modern React application with filtering, sorting, and editing features.</p>
-    <ul>
-      <li><a href="Artifacts/Enhanced/react-frontend/App.js" target="_blank">React Frontend Code (App.js)</a></li>
-    </ul>
-
-    <p><strong>Enhanced Backend Code:</strong> Node.js and Express backend connected to MongoDB with CRUD operations and validations.</p>
-    <ul>
-      <li><a href="Artifacts/Enhanced/backend/server.js" target="_blank">Backend Server Code (server.js)</a></li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Narratives</h2>
-    <p>Documents describing enhancements, technical skills demonstrated, and alignment with course outcomes.</p>
-    <ul>
-      <li><a href="Narratives/CS499_Database_Enhancement.docx" target="_blank">CS499 Database Enhancement</a></li>
-      <li><a href="Narratives/CS499_Enhancement_One_2.docx" target="_blank">Enhancement One</a></li>
-      <li><a href="Narratives/Milestone_Three_Narrative_Algorithms_and_Data_Structure.docx" target="_blank">Milestone Three Narrative</a></li>
-      <li><a href="Narratives/Self_Assessment_CS499.docx" target="_blank">Professional Self-Assessment</a></li>
-    </ul>
-  </div>
-
-  <div class="section">
-    <h2>Code Review Video</h2>
-    <p>You can watch my code review video below or <a href="Code_Review_Video/YourVideoFileName.mp4" target="_blank">download the video here</a>.</p>
-    <!-- Replace the src URL below with your actual YouTube video link -->
-    <iframe 
-      src="https://www.youtube.com/embed/YOUR_VIDEO_ID" 
-      title="Code Review Video" 
-      frameborder="0" 
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-      allowfullscreen>
-    </iframe>
-  </div>
+<section id="selfAssessment">
+  <h2>Professional Self-Assessment Document</h2>
+  <p>Read the detailed self-assessment <a href="Narratives/Self_Assessment_CS499.docx" target="_blank">here</a>.</p>
+</section>
 
 </body>
 </html>
